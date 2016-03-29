@@ -1,0 +1,70 @@
+@import "color.sass"
+
+.section
+	text-align: center
+	font-size: 36px
+	&__content
+		padding-bottom: 130px
+	&--bg-white
+		background-color: #fff
+	&--bg-grey
+		background-color: $color-bg-grey
+	&--bg-darkgreen
+		background-color: $color-bg-dark
+		color: #fff
+	&--bg-photo
+		color: #fff
+	&--skew-right
+		padding-top: 4px
+		padding-bottom: 130px
+		margin-top: 50px
+		margin-top: -105px
+		transform: skewY(-3deg)
+	&--skew-right-back
+		transform: skewY(3deg)
+		padding: 30px 20px 60px 20px
+	&--skew-left
+		padding-top: 4px
+		margin-top: -105px
+		margin-top: -110px
+		padding-bottom: 130px
+		transform: skewY(3deg)
+	&--skew-left-back
+		transform: skewY(-3deg)
+		padding: 30px 20px 60px 20px
+	&__paragraph
+		font-family: 'Lato', sans-serif
+		color: $color-paragraph
+		font-size: 18px
+		line-height: 30px
+	&__title
+		margin-top: 30px
+		margin-bottom: 4px
+		font-size: 36px
+		font-weight: 500
+		letter-spacing: 18px
+		text-transform: uppercase
+	&__delimiter
+		font-size: 24px
+		position: relative
+		display: inline-block
+		&:after
+			content: " "
+			position: absolute
+			bottom: 17px
+			width: 85px
+			right: -115px
+		&--color-white:after
+			border-top: 1px solid #fff
+		&--color-grey:after
+			border-top: 1px solid $color-text-dark
+		&:before
+			content: " "
+			position: absolute
+			bottom: 17px
+			width: 85px
+			left: -115px
+		&--color-white:before
+			border-top: 1px solid #fff
+		&--color-grey:before
+			border-top: 1px solid $color-text-dark	

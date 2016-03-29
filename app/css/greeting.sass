@@ -1,0 +1,44 @@
+@import "color.sass"
+
+.greeting
+	color: #fff
+	text-align: center
+	margin-top: 56px
+	&__photo-wrap
+		display: inline-block
+		border: 1px solid #fff
+		padding: 5px
+		border-radius: 50%
+		float: right
+	&__myname
+		font-size: 34px
+		font-weight: 700
+		letter-spacing: 19px
+		text-transform: uppercase
+		margin-bottom: 5px
+		margin-top: 40px
+	&__delimiter
+		border: 0
+		border-top: 1px solid $color-bg-light
+		width: 290px
+		margin: 0 auto
+	&__profession
+		font-size: 50px
+		margin-top: 4px
+		margin-bottom: 21px
+		font-weight: 400
+		text-transform: uppercase
+		letter-spacing: 1px
+	&__resume
+		font-size: 16px
+		font-weight: 400
+		display: inline-block
+		text-transform: uppercase
+		border: 2px solid #fff
+		color: #fff
+		padding: 15px 28px
+		transition: background-color, border-color, color 0.2s ease-in
+		&:hover
+			background-color: $color-bg-light
+			color: #206957
+			border-color: $color-bg-light
