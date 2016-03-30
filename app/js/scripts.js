@@ -4,7 +4,7 @@ $(document).ready(function() {
 	
 	$('.tag__item').click(function() {
 		$('.tag__item').removeClass('tag__item--active');
-		$(this).addClass('tag__item--active');
+		$(this).addClass('tag__item--active');		
 	});	
 	
 	// Instantiate MixItUp:
@@ -25,11 +25,12 @@ $(document).ready(function() {
 			fill: {color: '#ffffff'}
 		})		
 	});
-	
-	
+		
 	$(".sandwich").click(function() {
 		console.log('click');
 		$(".sandwich__wrap").toggleClass("sandwich__wrap--active");
+		$('#path-logotype').toggleClass("svg__logotype--active");
+		$('#navigation').fadeToggle();
 	});	
 	
 });

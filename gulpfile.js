@@ -28,7 +28,7 @@ gulp.task('css', function () {
 		.pipe(concat('css-files.css'));
 	var mergedStream = merge(sassStream, cssStream)
 		.pipe(concat('styles.css'))
-		.pipe(prefix({ browsers: ['> 5%', 'IE 9'], cascade: false }))
+		.pipe(prefix({ browsers: ['> 15%', 'IE 9'], cascade: false }))
 		.pipe(minifyCss())
 		.pipe(gulp.dest('app/css'))
 		.pipe(notify({
