@@ -3,7 +3,6 @@
 var gulp = require('gulp');
 var notify = require('gulp-notify');
 var minifyCss = require('gulp-minify-css');
-var minify = require('gulp-minify');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var merge = require('merge-stream');
@@ -11,6 +10,9 @@ var prefix = require('gulp-autoprefixer');
 var uncss = require('gulp-uncss');
 var imagemin = require('gulp-imagemin');
 var wiredep = require('wiredep').stream;
+var useref = require('gulp-useref');
+var gulpif = require('gulp-if');
+var uglify = require('gulp-uglify');
 var paths = {
   sass:['app/css/**/*.sass'],
 	css:['app/libs/**/*.css'],
@@ -35,8 +37,22 @@ gulp.task('css', function () {
 			onLast: true,
 			message: 'Done! CSS...'
 		}));
-	return mergedStream;				
+	return mergedStream;
 });
+
+// HTML
+
+gulp.task('html', function () {
+	return gulp.src('app/*.html')
+	.pipe(useref())
+	.pipe(gulpif('*.js', uglify()))
+	.pipe(gulpif('*.css', minifyCss()))
+	.pipe(gulp.dest('build'))
+	.pipe(notify({
+		onLast: true,
+		message: 'Done! Html...'
+	}));
+});	
 
 // BOWER
 
@@ -56,18 +72,12 @@ gulp.task('bower', function () {
 // UNCSS
 
 gulp.task('uncss', function () {
-	gulp.src('build/css/styles.css')
+	gulp.src('app/css/styles.css')
 	.pipe(uncss({
 		html: ['build/index.html']
 	}))
 	.pipe(minifyCss())
 	.pipe(gulp.dest('build/css/styles.min.css'));
-});
-
-//HTML
-
-gulp.task('html', function () {
-	
 });
 
 // Compress Task
@@ -87,7 +97,6 @@ gulp.task('compress', function() {
 gulp.task('watcher',function(){
 	gulp.watch(paths.css, ['css']);
 	gulp.watch(paths.sass, ['css']);
-	//gulp.watch(paths.images, ['compress']);
 	gulp.watch('bower.json', ['bower']);
 });
 
