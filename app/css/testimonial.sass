@@ -1,0 +1,62 @@
+@import "color.sass"
+
+.testimonial
+	margin-top: 35px
+	&__item
+		overflow: hidden
+		display: flex
+		flex-direction: row
+		justify-content: center
+		align-items: center
+		font-family: 'Lato', sans-serif
+		background-color: #fff
+		padding: 84px 34px
+		border-radius: 3px
+		border-top: 15px solid $color-bg-light
+	&__photo
+		border-radius: 50%
+		margin: 0 auto
+		border: 5px solid $color-bg-grey
+		min-width: 179px
+		height: 179px
+	&__review-wrap
+		margin-left: 60px
+		position: relative
+		margin-top: 0
+		margin-bottom: 0
+		&:before
+			content: "\201c"
+			position: absolute
+			font-family: 'Lato', sans-serif
+			font-weight: 700
+			font-style: italic
+			font-size: 72px
+			left: 0
+			top: -82px
+			color: $color-bg-light
+		&:after
+			content: "\201d"
+			position: absolute
+			font-family: 'Lato', sans-serif
+			font-weight: 700
+			font-style: italic
+			font-size: 72px
+			left: 0
+			bottom: -120px
+			color: $color-bg-light
+	&__review
+		font-size: 16px
+		color: #4a4a4a
+		font-style: italic
+		font-weight: 700
+		text-align: left
+		line-height: 30px
+	&__signature
+		color: #888b90
+		font-size: 16px
+		font-style: italic
+		font-weight: 300
+		text-align: left
+		margin-top: 36px
+		margin-bottom: 0
+		
